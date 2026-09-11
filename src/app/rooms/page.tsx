@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
-import RoomCard from "@/components/RoomCard";
+import PlaceholderImage from "@/components/PlaceholderImage";
 import BookingPlatforms from "@/components/BookingPlatforms";
 import Breakfast from "@/components/Breakfast";
-import { rooms, roomPolicies } from "@/data/rooms";
+import { roomPhotoIds, roomPolicies } from "@/data/rooms";
 
 export const metadata: Metadata = {
   title: "ROOMS",
@@ -28,8 +28,14 @@ export default function RoomsPage() {
       <section className="py-20 md:py-28 bg-warm-white">
         <div className="container-castle">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
-            {rooms.map((room) => (
-              <RoomCard key={room.id} room={room} />
+            {roomPhotoIds.map((id) => (
+              <PlaceholderImage
+                key={id}
+                label="객실 사진"
+                slug={`room-${id}`}
+                aspect="aspect-[3/4]"
+                fit="contain"
+              />
             ))}
           </div>
 

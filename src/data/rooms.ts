@@ -1,6 +1,6 @@
-// 일반 객실 정보. 홍보용 사이트 특성상 가격/상세 스펙 비교보다
-// 객실 사진을 모아 분위기를 보여주는 용도로 사용한다.
-// 사진은 public/images/room-{id}.jpg 로 매칭된다.
+// 일반 객실 정보. 홍보용 사이트 특성상 개별 객실을 구분해서 보여주기보다
+// 객실 사진들을 하나의 갤러리로 모아 전체적인 분위기만 보여주는 용도로 사용한다.
+// 사진은 public/images/room-{id}.jpg 로 매칭된다 (id는 화면에 노출되지 않는 내부 키).
 
 export const roomPricing = {
   single: { label: "1인 단독룸", price: "49,000원" },
@@ -8,20 +8,9 @@ export const roomPricing = {
   infantPolicy: "0~36개월 미만 무료",
 };
 
-export type Room = {
-  id: string;
-  name: string;
-};
-
-export const rooms: Room[] = [
-  { id: "1", name: "1호실" },
-  { id: "2", name: "2호실" },
-  { id: "3", name: "3호실" },
-  { id: "4", name: "4호실" },
-  { id: "5", name: "5호실" },
-  { id: "6", name: "6호실" },
-  { id: "7", name: "7호실" },
-];
+// 객실 사진 갤러리용 내부 id 목록. 새 사진을 추가하려면
+// public/images/room-{id}.jpg 를 추가하고 이 배열에 id만 추가하면 된다.
+export const roomPhotoIds: string[] = ["1", "2", "3", "4", "5", "6", "7"];
 
 export const roomPolicies = {
   checkIn: "오후 3시",
