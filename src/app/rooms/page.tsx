@@ -8,7 +8,7 @@ import { rooms, roomPolicies } from "@/data/rooms";
 export const metadata: Metadata = {
   title: "ROOMS",
   description:
-    "춘천 THE CASTLE 객실 안내. 1인 단독룸 49,000원, 2인 79,000원부터. 체크인 오후 3시, 체크아웃 오전 11시, 기본 조식 제공.",
+    "춘천 THE CASTLE 객실 안내. 유럽풍 인테리어의 프라이빗 객실들을 소개합니다. 체크인 오후 3시, 체크아웃 오전 11시, 기본 조식 제공.",
 };
 
 export default function RoomsPage() {
@@ -27,7 +27,7 @@ export default function RoomsPage() {
 
       <section className="py-20 md:py-28 bg-warm-white">
         <div className="container-castle">
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
             {rooms.map((room) => (
               <RoomCard key={room.id} room={room} />
             ))}

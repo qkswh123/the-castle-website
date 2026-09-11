@@ -23,9 +23,24 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 bg-warm-white">
         <div className="container-castle">
           <div className="grid md:grid-cols-3 gap-6">
-            <PlaceholderImage label="공용 라운지" slug="about-page-lounge" />
-            <PlaceholderImage label="다이닝룸" slug="about-page-dining" />
-            <PlaceholderImage label="객실 내부" slug="about-page-room" />
+            <PlaceholderImage
+              label="공용 라운지"
+              slug="about-page-lounge"
+              aspect="aspect-[3/4]"
+              fit="contain"
+            />
+            <PlaceholderImage
+              label="다이닝룸"
+              slug="about-page-dining"
+              aspect="aspect-[3/4]"
+              fit="contain"
+            />
+            <PlaceholderImage
+              label="객실 내부"
+              slug="about-page-room"
+              aspect="aspect-[3/4]"
+              fit="contain"
+            />
           </div>
         </div>
       </section>

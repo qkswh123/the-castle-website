@@ -7,6 +7,7 @@ type PlaceholderImageProps = {
   aspect?: string; // tailwind aspect-ratio class, e.g. "aspect-[4/3]"
   className?: string;
   priority?: boolean;
+  fit?: "cover" | "contain"; // 세로로 아주 긴 휴대폰 사진은 "contain"으로 잘림 없이 표시
 };
 
 export default function PlaceholderImage({
@@ -15,19 +16,24 @@ export default function PlaceholderImage({
   aspect = "aspect-[4/3]",
   className = "",
   priority = false,
+  fit = "cover",
 }: PlaceholderImageProps) {
   const src = slug ? resolveImage(slug) : null;
 
   if (src) {
     return (
-      <div className={`relative w-full ${aspect} ${className} overflow-hidden rounded-sm`}>
+      <div
+        className={`relative w-full ${aspect} ${className} overflow-hidden rounded-sm ${
+          fit === "contain" ? "bg-ivory-dark" : ""
+        }`}
+      >
         <Image
           src={src}
           alt={label}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
+          className={fit === "contain" ? "object-contain" : "object-cover"}
         />
       </div>
     );

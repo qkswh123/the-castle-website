@@ -1,4 +1,6 @@
-// 일반 객실 정보. 가격/시설 등은 실제 운영 정보가 바뀌면 이 배열만 수정하면 된다.
+// 일반 객실 정보. 홍보용 사이트 특성상 가격/상세 스펙 비교보다
+// 객실 사진을 모아 분위기를 보여주는 용도로 사용한다.
+// 사진은 public/images/room-{id}.jpg 로 매칭된다.
 
 export const roomPricing = {
   single: { label: "1인 단독룸", price: "49,000원" },
@@ -9,32 +11,16 @@ export const roomPricing = {
 export type Room = {
   id: string;
   name: string;
-  description: string;
-  capacity: string;
-  amenities: string[];
-  price: string;
-  breakfastIncluded: boolean;
 };
 
 export const rooms: Room[] = [
-  {
-    id: "single-room",
-    name: "싱글룸",
-    description: "혼자만의 시간을 위한 프라이빗 단독 객실입니다.",
-    capacity: "1인",
-    amenities: ["무료 Wi-Fi", "개인 수납공간", "냉난방 완비"],
-    price: roomPricing.single.price,
-    breakfastIncluded: true,
-  },
-  {
-    id: "double-room",
-    name: "더블룸",
-    description: "함께 여행하는 두 사람을 위한 아늑한 객실입니다.",
-    capacity: "2인",
-    amenities: ["무료 Wi-Fi", "개인 수납공간", "냉난방 완비"],
-    price: roomPricing.double.price,
-    breakfastIncluded: true,
-  },
+  { id: "1", name: "1호실" },
+  { id: "2", name: "2호실" },
+  { id: "3", name: "3호실" },
+  { id: "4", name: "4호실" },
+  { id: "5", name: "5호실" },
+  { id: "6", name: "6호실" },
+  { id: "7", name: "7호실" },
 ];
 
 export const roomPolicies = {
