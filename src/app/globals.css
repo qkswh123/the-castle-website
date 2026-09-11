@@ -22,8 +22,6 @@
   --color-gold-light: var(--color-gold-light);
   --color-green: var(--color-green);
   --color-charcoal: var(--color-charcoal);
-  --font-serif-en: var(--font-playfair);
-  --font-serif-kr: var(--font-noto-serif-kr);
   --font-sans-kr: var(--font-noto-sans-kr);
 }
 
@@ -37,12 +35,9 @@ body {
   font-family: var(--font-noto-sans-kr), -apple-system, sans-serif;
 }
 
-.font-brand {
-  font-family: var(--font-playfair), var(--font-noto-serif-kr), serif;
-}
-
+.font-brand,
 .font-display {
-  font-family: var(--font-noto-serif-kr), var(--font-playfair), serif;
+  font-family: var(--font-noto-sans-kr), -apple-system, sans-serif;
 }
 
 ::selection {
