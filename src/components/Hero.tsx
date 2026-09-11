@@ -1,19 +1,41 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteInfo } from "@/data/site";
+import { resolveImage } from "@/lib/images";
 
 export default function Hero() {
+  // public/images/hero.jpg 를 추가하면 실제 사진이 배경으로 자동 표시된다.
+  const heroImage = resolveImage("hero");
+
   return (
     <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-navy">
-      {/* 실제 숙소 대표 사진으로 교체 예정: public/images/hero.jpg */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-navy-light)_0%,_var(--color-navy)_60%,_var(--color-charcoal)_100%)]" />
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt="THE CASTLE 대표 사진"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      )}
       <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, var(--color-gold) 0, var(--color-gold) 1px, transparent 1px, transparent 34px)",
-        }}
-        aria-hidden
+        className={`absolute inset-0 ${
+          heroImage
+            ? "bg-navy/70"
+            : "bg-[radial-gradient(ellipse_at_top,_var(--color-navy-light)_0%,_var(--color-navy)_60%,_var(--color-charcoal)_100%)]"
+        }`}
       />
+      {!heroImage && (
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, var(--color-gold) 0, var(--color-gold) 1px, transparent 1px, transparent 34px)",
+          }}
+          aria-hidden
+        />
+      )}
       <div className="absolute inset-6 md:inset-10 border border-gold/25 pointer-events-none" />
 
       <div className="relative z-10 container-castle flex flex-col items-center text-center gap-7 py-24">

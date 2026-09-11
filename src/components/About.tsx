@@ -11,8 +11,13 @@ export default function About({ compact = false }: AboutProps) {
     <section className="py-20 md:py-28 bg-ivory">
       <div className="container-castle grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="grid grid-cols-2 gap-4">
-          <PlaceholderImage label="THE CASTLE 외관" aspect="aspect-[3/4]" className="mt-8" />
-          <PlaceholderImage label="THE CASTLE 라운지" aspect="aspect-[3/4]" />
+          <PlaceholderImage
+            label="THE CASTLE 외관"
+            slug="about-exterior"
+            aspect="aspect-[3/4]"
+            className="mt-8"
+          />
+          <PlaceholderImage label="THE CASTLE 라운지" slug="about-lounge" aspect="aspect-[3/4]" />
         </div>
 
         <div className="flex flex-col gap-6">

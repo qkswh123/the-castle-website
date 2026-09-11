@@ -28,8 +28,12 @@ export default function PrivateHousePage() {
 
       <section className="py-16 md:py-20 bg-warm-white">
         <div className="container-castle grid md:grid-cols-2 gap-4">
-          <PlaceholderImage label="독채 외관" aspect="aspect-[4/3]" />
-          <PlaceholderImage label="독채 내부 공용공간" aspect="aspect-[4/3]" />
+          <PlaceholderImage label="독채 외관" slug="private-house-exterior" aspect="aspect-[4/3]" />
+          <PlaceholderImage
+            label="독채 내부 공용공간"
+            slug="private-house-interior"
+            aspect="aspect-[4/3]"
+          />
         </div>
       </section>
 

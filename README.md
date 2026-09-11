@@ -52,11 +52,43 @@ ROOMS 페이지의 버튼이 자동으로 활성화됩니다. 비워두면 "준�
 주소가 확정되면 `src/data/location.ts`와 `src/data/site.ts`의 `mapLinks`에 실제 주소와
 네이버지도/카카오맵 URL을 입력하세요.
 
-## 실제 사진 교체하기
+## 실제 사진 넣기 (코드 수정 없이 파일만 추가하면 됨)
 
-현재 모든 이미지 영역은 `PlaceholderImage` 컴포넌트로 표시되는 자리표시자입니다.
-실제 사진이 준비되면 `public/images/` 폴더에 사진을 추가하고, 각 페이지의
-`PlaceholderImage` 부분을 Next.js `<Image />` 컴포넌트로 교체해 연결하면 됩니다.
+`public/images/` 폴더에 아래 표의 **파일명 그대로** 사진을 넣으면 자동으로 placeholder 대신 실제 사진이 표시됩니다.
+확장자는 `.jpg`, `.jpeg`, `.png`, `.webp` 중 아무거나 가능합니다 (예: `hero.jpg` 또는 `hero.webp`).
+사진이 없는 자리는 지금처럼 회색 placeholder가 계속 표시되니, 준비되는 대로 하나씩 추가하면 됩니다.
+사진을 추가/변경한 뒤에는 `npm run build`(또는 `npm run dev` 재시작)를 다시 실행해야 반영됩니다.
+
+| 파일명 (확장자 제외) | 어디에 쓰이나 |
+| --- | --- |
+| `hero.jpg` | 첫 화면(HOME) 배경 사진 |
+| `about-exterior.jpg` | 홈/ABOUT 소개 섹션 — 외관 사진 |
+| `about-lounge.jpg` | 홈/ABOUT 소개 섹션 — 라운지 사진 |
+| `about-page-lounge.jpg` | ABOUT 페이지 하단 — 라운지 |
+| `about-page-dining.jpg` | ABOUT 페이지 하단 — 다이닝룸 |
+| `about-page-room.jpg` | ABOUT 페이지 하단 — 객실 내부 |
+| `category-rooms.jpg` | 홈 화면 카테고리 카드 — ROOMS |
+| `category-private-house.jpg` | 홈 화면 카테고리 카드 — PRIVATE HOUSE |
+| `category-space.jpg` | 홈 화면 카테고리 카드 — SPACE |
+| `category-chuncheon.jpg` | 홈 화면 카테고리 카드 — CHUNCHEON |
+| `room-single-room.jpg` | ROOMS 페이지 — 싱글룸 |
+| `room-double-room.jpg` | ROOMS 페이지 — 더블룸 |
+| `breakfast-1.jpg`, `breakfast-2.jpg` | 조식 소개 섹션 |
+| `private-house-exterior.jpg` | PRIVATE HOUSE 페이지 — 외관 |
+| `private-house-interior.jpg` | PRIVATE HOUSE 페이지 — 내부 공용공간 |
+| `space-lounge.jpg` | SPACE 페이지 — 라운지 |
+| `space-dining.jpg` | SPACE 페이지 — 다이닝룸 |
+| `space-kitchen.jpg` | SPACE 페이지 — 공용주방 |
+| `space-living.jpg` | SPACE 페이지 — 거실 |
+| `space-laundry.jpg` | SPACE 페이지 — 세탁실 |
+| `chuncheon-namiseom.jpg` 등 `chuncheon-{id}.jpg` | CHUNCHEON 페이지 여행지 사진 (id는 `src/data/attractions.ts`의 각 항목 `id` 값) |
+
+새 객실이나 새 여행지를 `src/data/rooms.ts` / `src/data/attractions.ts`에 추가하면, 그 항목의 `id`를 그대로
+파일명에 사용하면 됩니다 (예: `id: "twin-room"` → `room-twin-room.jpg`).
+
+주의: 여기어때/에어비앤비 등 예약 플랫폼에 올라간 사진을 그대로 캡처해서 쓰기보다는,
+원본 사진 파일(휴대폰/카메라 원본 또는 촬영 업체에서 받은 파일)을 사용하는 것을 권장합니다.
+플랫폼에 노출된 이미지는 해상도가 낮게 압축되어 있어 웹사이트에서 흐릿하게 보일 수 있습니다.
 
 ## 폴더 구조
 

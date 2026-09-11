@@ -8,6 +8,7 @@ const categories = [
     subtitle: "객실 안내",
     description: "프라이빗한 싱글·더블룸에서 편안한 휴식을 경험하세요.",
     imageLabel: "객실 사진",
+    slug: "category-rooms",
   },
   {
     href: "/private-house",
@@ -15,6 +16,7 @@ const categories = [
     subtitle: "독채",
     description: "최대 18명이 함께하는 우리만의 공간, 독채 전체 대여.",
     imageLabel: "독채 사진",
+    slug: "category-private-house",
   },
   {
     href: "/space",
@@ -22,6 +24,7 @@ const categories = [
     subtitle: "공용공간",
     description: "라운지, 다이닝룸, 공용주방 등 함께 머무는 공간들.",
     imageLabel: "공용공간 사진",
+    slug: "category-space",
   },
   {
     href: "/chuncheon",
@@ -29,6 +32,7 @@ const categories = [
     subtitle: "춘천 여행",
     description: "THE CASTLE에서 시작하는 춘천 여행 정보.",
     imageLabel: "춘천 여행 사진",
+    slug: "category-chuncheon",
   },
 ];
 
@@ -54,6 +58,7 @@ export default function HomeCategories() {
             >
               <PlaceholderImage
                 label={c.imageLabel}
+                slug={c.slug}
                 aspect="aspect-[4/5]"
                 className="transition-transform duration-300 group-hover:scale-[1.02]"
               />

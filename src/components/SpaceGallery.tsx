@@ -11,7 +11,11 @@ export default function SpaceGallery() {
             i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
-          <PlaceholderImage label={`${space.nameKr} 사진`} aspect="aspect-[4/3]" />
+          <PlaceholderImage
+            label={`${space.nameKr} 사진`}
+            slug={`space-${space.id}`}
+            aspect="aspect-[4/3]"
+          />
           <div>
             <p className="font-sans-kr text-xs tracking-widest text-gold uppercase">
               {space.nameKr}

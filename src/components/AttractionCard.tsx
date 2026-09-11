@@ -5,7 +5,11 @@ import PlaceholderImage from "./PlaceholderImage";
 export default function AttractionCard({ attraction }: { attraction: Attraction }) {
   return (
     <div className="flex flex-col bg-warm-white border border-navy/10">
-      <PlaceholderImage label={`${attraction.name} 사진`} aspect="aspect-[4/3]" />
+      <PlaceholderImage
+        label={`${attraction.name} 사진`}
+        slug={`chuncheon-${attraction.id}`}
+        aspect="aspect-[4/3]"
+      />
       <div className="p-5 flex flex-col gap-2 flex-1">
         <span className="font-sans-kr text-[11px] tracking-widest text-gold uppercase">
           {categoryLabels[attraction.category]}

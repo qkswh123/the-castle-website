@@ -1,16 +1,40 @@
+import Image from "next/image";
+import { resolveImage } from "@/lib/images";
+
 type PlaceholderImageProps = {
   label: string;
+  slug?: string; // public/images/{slug}.jpg 가 있으면 실제 사진으로 자동 교체됨
   aspect?: string; // tailwind aspect-ratio class, e.g. "aspect-[4/3]"
   className?: string;
+  priority?: boolean;
 };
 
-// 실제 사진이 준비되기 전까지 사용하는 자리표시 이미지.
-// 나중에 assets/images 폴더의 실제 사진으로 교체하면 된다.
 export default function PlaceholderImage({
   label,
+  slug,
   aspect = "aspect-[4/3]",
   className = "",
+  priority = false,
 }: PlaceholderImageProps) {
+  const src = slug ? resolveImage(slug) : null;
+
+  if (src) {
+    return (
+      <div className={`relative w-full ${aspect} ${className} overflow-hidden rounded-sm`}>
+        <Image
+          src={src}
+          alt={label}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
+  // 실제 사진이 준비되기 전까지 사용하는 자리표시 이미지.
+  // public/images/{slug}.jpg 로 사진을 추가하면 자동으로 교체된다.
   return (
     <div
       className={`relative w-full ${aspect} ${className} overflow-hidden rounded-sm bg-gradient-to-br from-navy-light via-navy to-charcoal`}

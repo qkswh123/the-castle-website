@@ -6,8 +6,13 @@ export default function Breakfast() {
     <section className="py-20 md:py-28 bg-ivory">
       <div className="container-castle grid lg:grid-cols-2 gap-12 items-center">
         <div className="grid grid-cols-2 gap-4">
-          <PlaceholderImage label="조식 사진" aspect="aspect-square" />
-          <PlaceholderImage label="다이닝룸 조식 테이블" aspect="aspect-square" className="mt-8" />
+          <PlaceholderImage label="조식 사진" slug="breakfast-1" aspect="aspect-square" />
+          <PlaceholderImage
+            label="다이닝룸 조식 테이블"
+            slug="breakfast-2"
+            aspect="aspect-square"
+            className="mt-8"
+          />
         </div>
 
         <div className="flex flex-col gap-5">
