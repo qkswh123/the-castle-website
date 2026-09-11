@@ -60,7 +60,6 @@ export default function HomeCategories() {
                 label={c.imageLabel}
                 slug={c.slug}
                 aspect="aspect-[4/5]"
-                fit="contain"
                 className="transition-transform duration-300 group-hover:scale-[1.02]"
               />
               <div>

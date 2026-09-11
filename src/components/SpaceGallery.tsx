@@ -14,8 +14,7 @@ export default function SpaceGallery() {
           <PlaceholderImage
             label={`${space.nameKr} 사진`}
             slug={`space-${space.id}`}
-            aspect="aspect-[3/4]"
-            fit="contain"
+            aspect="aspect-[4/3]"
           />
           <div>
             <p className="font-sans-kr text-xs tracking-widest text-gold uppercase">

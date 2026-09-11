@@ -33,7 +33,6 @@ export default function PrivateHousePage() {
             label="독채 내부 공용공간"
             slug="private-house-interior"
             aspect="aspect-[4/3]"
-            fit="contain"
           />
         </div>
       </section>
