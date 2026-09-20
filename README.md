@@ -71,8 +71,7 @@ ROOMS 페이지의 버튼이 자동으로 활성화됩니다. 비워두면 "준�
 | `category-private-house.jpg` | 홈 화면 카테고리 카드 — PRIVATE HOUSE |
 | `category-space.jpg` | 홈 화면 카테고리 카드 — SPACE |
 | `category-chuncheon.jpg` | 홈 화면 카테고리 카드 — CHUNCHEON |
-| `room-single-room.jpg` | ROOMS 페이지 — 싱글룸 |
-| `room-double-room.jpg` | ROOMS 페이지 — 더블룸 |
+| `room-1.jpg` ~ `room-7.jpg` | ROOMS 페이지 — 객실 사진 갤러리 (번호는 `src/data/rooms.ts`의 `roomPhotoIds` 배열과 매칭, 사진을 늘리거나 줄이려면 그 배열의 id 개수를 맞추면 됨) |
 | `breakfast-1.jpg`, `breakfast-2.jpg` | 조식 소개 섹션 |
 | `private-house-exterior.jpg` | PRIVATE HOUSE 페이지 — 외관 |
 | `private-house-interior.jpg` | PRIVATE HOUSE 페이지 — 내부 공용공간 |
